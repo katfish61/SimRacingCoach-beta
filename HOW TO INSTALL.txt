@@ -1,0 +1,99 @@
+SIM RACING COACH (BETA) - HOW TO INSTALL AND USE
+================================================
+
+Works with iRacing, Assetto Corsa Competizione, Assetto Corsa,
+Assetto Corsa EVO and Automobilista 2, on Windows. Everything stays on
+your PC: no account, nothing uploaded, works offline.
+
+AUTOMOBILISTA 2 ONLY (once): in the game go to Options > System >
+Shared Memory and choose "Project CARS 2". The other sims need no setting.
+
+1. GET THE RECORDER (once)
+   a. Copy "SimLapRecorder.exe" somewhere easy, e.g. your Desktop.
+      It needs nothing else installed.
+   b. The first time you double-click it, Windows may show a blue box
+      "Windows protected your PC". That's normal for small programs that
+      aren't from a big publisher: click "More info", then "Run anyway".
+      Windows remembers, so you only do this once.
+   c. If your antivirus warns about it, that's a known false alarm with
+      programs packaged this way (PyInstaller).
+
+2. EACH TIME YOU RACE
+   a. Double-click "SimLapRecorder.exe". A small dark window appears.
+      Only one copy runs at a time; starting it again brings the window
+      to the front.
+   b. Start your sim as usual. You can start the recorder before or after
+      the sim - order doesn't matter.
+   c. Drive. The dot turns red and says "Recording". Each lap appears in
+      the list when you cross the line. Your fastest valid lap is purple.
+   d. Close the window when you're done.
+
+3. LOOK AT YOUR LAPS (THE ANALYSER)
+   Click "Analyse last session" in the recorder window. After a second or
+   two your web browser opens the analyser with that session loaded:
+   your laps, your ideal lap (your best sections stitched together), the
+   track map, where the time went corner by corner, the other drivers,
+   and setup suggestions fitted to what your car can adjust.
+   "Analyse another..." lets you pick any older session.
+   The page is saved as analysis.html in the session folder, so you can
+   open it again later by double-clicking it. It's big (10-30 MB) because
+   every lap is inside it. You can do this while you're still driving.
+
+4. VOICE COACH (optional)
+   Tick "Voice coach" in the recorder window and it talks to you while
+   you drive, through your PC's default sound device:
+     - after your first clean lap: "Reference lap set"
+     - on the straight after a corner where you lost a tenth or more
+       against your best lap, one short note with the reason, e.g.
+       "Les Combes, two tenths down. You coasted. Ease off the brake
+       gradually, all the way to the apex."
+     - "best yet" when you beat your best version of a corner
+     - your lap time at the line, against your best
+   It never talks in a corner or a braking zone, waits 5 seconds between
+   notes, says at most 5 corner notes a lap, and after a spin says "big
+   moment" once and stays quiet until the line. "Test voice" plays a
+   sample. The Volume box (-6 to +9 dB) sets voice and beep volume.
+
+5. BRAKE BEEPS (optional)
+   Tick "Brake beeps" and you hear a countdown before each braking
+   zone: two short pips and a third, higher one. Press the brake on the
+   third pip. "Test beep" plays it. The braking points come from your
+   own best lap of the session (from the lap after your first clean
+   one). They work with the voice coach on or off.
+
+6. ORIGINAL ASSETTO CORSA: OTHER CARS (optional)
+   AC only shares your own car, so to compare with the AI or other
+   drivers it needs a small in-game app, SimLapOthers, included in the
+   "assettocorsa" folder of this download.
+     a. Open your Assetto Corsa folder: in Steam, right-click Assetto
+        Corsa > Manage > Browse local files.
+     b. Copy the "apps" and "content" folders from this download's
+        "assettocorsa" folder into it. If Windows asks, choose to merge
+        the folders (nothing of yours is replaced).
+     c. Content Manager: Settings > Assetto Corsa > Apps (Python apps):
+        tick SimLapOthers. Without Content Manager: in the game's main
+        menu, Options > General > UI Modules, tick SimLapOthers.
+   The app shares the other cars even if you never open its window.
+   Your own laps are recorded with or without it.
+   If you own original AC, the recorder also reads its track files for
+   corner names, and its car files for each car's ideal tyre pressure and
+   temperature range. That happens on your PC only.
+
+WHERE THE LAPS GO
+   Documents\SimLapRecorder\ - one folder per session, named with the
+   date, sim, track and car. "Open recordings folder" jumps there.
+   Each folder holds lap_001.csv, lap_002.csv ... plus session.json.
+   iRacing sessions also save your car setup (setup_xxxx.yaml).
+   If other cars were on track, others.csv.gz and drivers.json hold
+   their positions so you can compare against them in the analyser.
+
+WHAT THE LAP STATUSES MEAN
+   Valid                  - a clean full lap, ready for analysis
+   Invalid (track limits) - full lap, but the sim flagged it
+   Pit / out lap          - included the pit lane
+   Incomplete             - joined mid-lap, reset, or teleported
+
+IF SOMETHING LOOKS WRONG
+   Please report it with the sim, car and track, plus these files from
+   Documents\SimLapRecorder: recorder.log (and crash.txt if there is
+   one), and the session folder, zipped.
